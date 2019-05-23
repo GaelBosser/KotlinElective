@@ -20,6 +20,7 @@ import kotlinx.android.synthetic.main.fragment_episodes.*
 class EpisodesListFragment : Fragment() {
 
     private lateinit var viewModel: EpisodesListViewModel
+    // TODO de même que dans CharactersListFragment avec by lazy
     private val episodesListAdapter = RMEpisodesListAdapter()
 
     override fun onCreateView(
@@ -58,6 +59,7 @@ class EpisodesListFragment : Fragment() {
         })
 
         viewModel.errorLiveData.observe(this, Observer { e ->
+            // TODO utiliser un ?.let ici plutôt
             if (view != null) {
                 this.showError(e.localizedMessage)
             }

@@ -45,6 +45,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun setUpBottomNavigationView() {
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
+        // TODO pourquoi ne pas directement utiliser nav_view au lieu de faire un findView ?
         navView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
     }
 }

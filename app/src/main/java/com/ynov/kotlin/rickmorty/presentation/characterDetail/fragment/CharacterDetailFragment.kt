@@ -28,6 +28,7 @@ class CharacterDetailFragment : Fragment() {
         arguments?.getString("characterId")?.let { characterId ->
             this.bindViewmodel(characterId)
         }
+        // très bien ça
     }
 
     private fun bindViewmodel(characterId: String) {
@@ -37,6 +38,7 @@ class CharacterDetailFragment : Fragment() {
         })
 
         viewModel.errorLiveData.observe(this, Observer {
+            // TODO utiliser un ?.let ici
             if (view != null) {
                 this.showError(it.localizedMessage)
             }

@@ -10,6 +10,9 @@ class RMEpisodesListAdapter: RMListAdapter<RMEpisode, String, RMEpisodeViewHolde
     override fun getLayout(): Int {
         return R.layout.episode_cell_layout
     }
+    // TODO pour optimiser le code, ne pas hésiter à utiliser :
+    //  override fun getLayout(): Int = R.layout.episode_cell_layout
+    //  mais vu le reste du code j'imagine que c'est un oubli
 
     override fun getViewHolder(view: View): RMEpisodeViewHolder =
         RMEpisodeViewHolder(view)

@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!-- TODO ATTENTION dans un layout de fragment il faut mettre le ConstraintLayout directement à la racine -->
+<!--  pas de FrameLayout en parent d'un ConstraintLayout -->
+
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
              xmlns:app="http://schemas.android.com/apk/res-auto"
              xmlns:tools="http://schemas.android.com/tools"

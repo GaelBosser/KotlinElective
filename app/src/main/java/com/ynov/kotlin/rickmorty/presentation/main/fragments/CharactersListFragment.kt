@@ -18,11 +18,15 @@ import com.ynov.kotlin.rickmorty.presentation.characterDetail.activity.Character
 import com.ynov.kotlin.rickmorty.presentation.main.viewModels.CharactersListViewModel
 import kotlinx.android.synthetic.main.fragment_characters_list.*
 
+// TODO attention à bien mettre cette constante dans le companion object si elle est utilisée en dehors du fichier
+//  si une constante est utilisée uniquement dans un fichier, alors oui on doit faire ça mais aussi ajouter un private
 const val CHARACTER_ID = "characterId"
 
 class CharactersListFragment : Fragment() {
 
     private lateinit var viewModel: CharactersListViewModel
+    // TODO pour l'adapter, je conseil l'utilisation de
+    // private val charactersListAdapter: RMCharactersListAdapter by lazy { RMCharactersListAdapter() }
     private val charactersListAdapter = RMCharactersListAdapter()
 
     override fun onCreateView(
@@ -53,10 +57,13 @@ class CharactersListFragment : Fragment() {
         charactersListAdapter.updateList(charactersList)
     }
 
+    // TODO attention au nom de la variable recycleView
     private fun bindViewModel(recycleView: RecyclerView) {
         viewModel.charactersList.observe(this, Observer { charactersList ->
             characters_recycle_view.layoutManager = LinearLayoutManager(context)
             update(charactersList)
+            // TODO Ici vous resettez le listener à chaque fois que vous récupérez la liste
+            //  une seule fois en dehors de l'observe suffit
             charactersListAdapter.onClickListener = { id ->
                 this.startCharacterDetailActivity(id)
             }

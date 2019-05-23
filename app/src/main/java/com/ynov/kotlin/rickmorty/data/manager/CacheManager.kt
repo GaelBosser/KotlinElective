@@ -24,7 +24,7 @@ class CacheManager {
         this.characterDetail.add(character)
     }
 
-    fun getCharactersList(page: Int): List<RMCharacter> = charactersList[page] ?: listOf()
-    fun getEpisodesList(page: Int): List<RMEpisode> = episodesList[page] ?: listOf()
+    fun getCharactersList(page: Int): List<RMCharacter> = charactersList[page] ?: listOf()  // TODO emptyList() plutôt que listOf()
+    fun getEpisodesList(page: Int): List<RMEpisode> = episodesList[page] ?: listOf()        // TODO emptyList() plutôt que listOf()
     fun getCharacterDetail(id: Int): RMCharacter? = characterDetail.find { it.id == id.toLong() }
 }
